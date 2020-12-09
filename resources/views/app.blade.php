@@ -9,17 +9,23 @@
         <title>My Scripts</title>
     </head>
     <body>
-        <div  class="bg-gradient-to-r from-purple-700 to-red-700">
+        <div  class="bg-gradient-to-r from-purple-800 to-red-800">
             <nav style='max-width: 1280px;' class="mx-auto py-12 text-white px-4">
                 <ul>
                     <li class="nav-item">
-                        <p class='uppercase opacity-50 font-semibold tracking-widest mb-2 text-sm text-red-200'>String Manipulation</p>
+                        <p class='uppercase opacity-25 font-semibold tracking-widest mb-2 text-sm text-purple-100'>String Manipulation</p>
                     </li>
                     <li>
-                        <a href="{{ route('texts.slashes.remove.view') }}" class="hover:underline">Remove escaping slashes</a>
+                        <a href="{{ route('texts.slashes.remove.view') }}" class="hover:underline block py-2">Remove escaping slashes</a>
                     </li>
                     <li>
-                        <a href="{{ route('texts.slashes.add.view') }}" class="hover:underline">Add escaping slashes</a>
+                        <a href="{{ route('texts.slashes.add.view') }}" class="hover:underline block py-2">Add escaping slashes</a>
+                    </li>
+                    <li>
+                        <a href="{{ route('texts.lorem.view') }}" class="hover:underline block py-2">Lorem ipsum</a>
+                    </li>
+                    <li>
+                        <a href="{{ route('html.markdown.view') }}" class="hover:underline block py-2">Html to Markdown</a>
                     </li>
                 </ul>
             </nav>

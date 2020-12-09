@@ -6,8 +6,11 @@ use Illuminate\Support\Str;
 
 class LoremIpsum
 {
-    public function getText($chars = null)
+    public function getDummyText($chars = null)
     {
-        return Str::substr(config('services.lorem.string'), 0, $chars ?? config('services.lorem.chars'));
+        if ($chars && $chars < config('services.lorem.chars')) {
+            return Str::substr(config('services.lorem.text'), 0, $chars);
+        }
+        return config('services.lorem.text');
     }
 }
