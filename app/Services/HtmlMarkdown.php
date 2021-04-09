@@ -2,9 +2,10 @@
 
 namespace App\Services;
 
+use GrahamCampbell\Markdown\Facades\Markdown;
 use League\HTMLToMarkdown\HtmlConverter;
 
-class Html
+class HtmlMarkdown
 {
     public function convertToMarkup($text = '')
     {
@@ -14,5 +15,10 @@ class Html
         $converter->getConfig()->setOption('header_style', 'atx');
 
         return $converter->convert($text);
+    }
+
+    public function convertToHtml($markup = '')
+    {
+        return Markdown::convertToHtml($markup);
     }
 }

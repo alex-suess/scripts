@@ -19,7 +19,7 @@ class TextsController extends Controller
     public function showAddSlashes()
     {
         return view('texts.slashes-add', [
-            'addedResult' => '',
+            'addedResult'   => '',
             'input'         => '',
         ]);
     }
@@ -28,7 +28,7 @@ class TextsController extends Controller
     {
         $service = new TextManipulation();
         return view('texts.slashes-add', [
-            'addedResult' => $service->removeEscapes($request->input('html')),
+            'addedResult'   => $service->addEscapes($request->input('html')),
             'input'         => $request->input('html'),
         ]);
     }
@@ -45,7 +45,7 @@ class TextsController extends Controller
     public function showLoremIpsum(Request $request)
     {
         return view('texts.lorem-ipsum', [
-            'dummyText' => '',
+            'dummyText'     => '',
             'input'         => $request->input('html'),
         ]);
     }
@@ -54,7 +54,7 @@ class TextsController extends Controller
     {
         $service = new LoremIpsum();
         return view('texts.lorem-ipsum', [
-            'dummyText' => $service->getDummyText($request->input('length')),
+            'dummyText'     => $service->getDummyText($request->input('length')),
             'input'         => $request->input('html'),
         ]);
     }

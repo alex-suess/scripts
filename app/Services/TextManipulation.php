@@ -6,6 +6,7 @@ class TextManipulation
 {
     public function convertMultilineHtmlToString($html)
     {
+        $html = str_replace('> <', '><', $html);
         $html = trim(preg_replace('/\s+/', ' ', $html));
         return $html;
     }
@@ -13,6 +14,7 @@ class TextManipulation
     public function removeEscapes($html)
     {
         $html = str_replace('\n', '', $html);
+        $html = str_replace('\r', '', $html);
         $html = str_replace('\"', '"', $html);
         $html = str_replace('\/', '/', $html);
         return $this->convertMultilineHtmlToString($html);

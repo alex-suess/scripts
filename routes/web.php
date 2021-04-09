@@ -25,3 +25,10 @@ Route::get('/texts/lorem', 'App\Http\Controllers\TextsController@showLoremIpsum'
 Route::post('/texts/lorem', 'App\Http\Controllers\TextsController@getDummyText')->name('texts.lorem.get');
 Route::get('/html/markdown', 'App\Http\Controllers\HtmlController@showMarkdown')->name('html.markdown.view');
 Route::post('/html/markdown', 'App\Http\Controllers\HtmlController@convertToMarkdown')->name('html.markdown.get');
+Route::get('/html/html', 'App\Http\Controllers\HtmlController@showHtml')->name('html.html.view');
+Route::post('/html/html', 'App\Http\Controllers\HtmlController@convertToHtml')->name('html.html.get');
+Route::get('/math/triangle', 'App\Http\Controllers\MathController@showPythagoras')->name('math.triangle.view');
+Route::post('/math/triangle', 'App\Http\Controllers\MathController@calculatePythagoras')->name('math.triangle.get');
+
+Route::get('/football/snap-counts', 'App\Http\Controllers\FootballController@showConvertSnapCounts')->name('football.show-snap-counts');
+Route::post('/football/snap-counts', 'App\Http\Controllers\FootballController@convertSnapCounts')->name('football.convert-snap-counts');
